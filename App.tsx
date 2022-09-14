@@ -11,7 +11,6 @@ import { Loader } from './src/components/Loader';
 import { Background } from './src/components/Background';
 import { Home } from './src/screens/Home';
 
-
 export default function App() {
   const [fontsLoaded] = useFonts({
     Inter_400Regular,
