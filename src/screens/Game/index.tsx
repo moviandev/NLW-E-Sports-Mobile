@@ -9,6 +9,7 @@ import { THEME } from '../../theme';
 import { Background } from '../../components/Background';
 import { Heading } from '../../components/Heading';
 import { DuoCard, DuoCardProps } from '../../components/DuoCard';
+import { DuoMatch } from '../../components/DuoMatch';
 import { GameParams } from '../../@types/navigation';
 
 import { styles } from './styles';
@@ -22,7 +23,7 @@ export function Game() {
   const navigation = useNavigation();
 
   useEffect(() => {
-    fetch(`http://192.168.0.47:3333/games/${game.id}/ads`)
+    fetch(`http://{yourIp}:3333/games/${game.id}/ads`)
       .then(res => res.json())
       .then(data => setDuos(data))
   }, []);
@@ -83,6 +84,11 @@ export function Game() {
               Não há anúncios publicados ainda.
             </Text>
           )}
+        />
+
+        <DuoMatch
+          visible={true}
+          discord="example#teste"
         />
       </SafeAreaView>
     </Background>
